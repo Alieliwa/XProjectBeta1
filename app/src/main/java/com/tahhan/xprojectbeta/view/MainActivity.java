@@ -1,13 +1,12 @@
 package com.tahhan.xprojectbeta.view;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
-
 import com.tahhan.xprojectbeta.R;
+import com.tahhan.xprojectbeta.TrasporterRegFragment;
 import com.tahhan.xprojectbeta.view.ui.login.LoginFragment;
 import com.tahhan.xprojectbeta.view.ui.login.RegisterFragment;
 
@@ -18,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private LoginFragment loginFragment;
     private RegisterFragment registerFragment;
     private FragmentManager fm;
+    private TrasporterRegFragment tf;
 
 
     @Override
@@ -47,11 +47,17 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
 
-    @Override
     public void onBackPressed() {
         if (loginFragment.isVisible()) {
             finish();
         } else super.onBackPressed();
 
+      /*  TrasporterRegFragment transporterReg = new TrasporterRegFragment();
+
+        fm.beginTransaction().replace(R.id.fragment_container,transporterReg).commit();
+*/
     }
+
+
+
 }
